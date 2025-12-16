@@ -13,13 +13,13 @@ st.set_page_config(
 )
 
 def main():
-    st.title("🔧 Device Management System")
+    st.title("Device Management System")
     
     st.sidebar.title("Navigation")
     selection = st.sidebar.radio("Go to", ["Dashboard", "Device Management", "User Management"])
 
     if selection == "Dashboard":
-        st.info("Dashboard module coming ....")
+        st.info("Dashboard module coming soon....")
         
     elif selection == "Device Management":
         show_devices_ui()
