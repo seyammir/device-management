@@ -10,7 +10,7 @@ def show_users_ui() -> None:
     """
     db = DBManager()
 
-    st.header("👥 User Management")
+    st.header("User Management")
 
     # Add New User
     st.subheader("Add New User")
@@ -21,9 +21,9 @@ def show_users_ui() -> None:
         with col1:
             user_id = st.text_input("User ID", placeholder="e.g. 123456 (Matriculation No.)")
         with col2:
-            name_input = st.text_input("Full Name", placeholder="e.g. Max Musterman")
+            name_input = st.text_input("Full Name", placeholder="e.g. John Doe")
         with col3:
-            email_input = st.text_input("Email", placeholder="e.g. mm1234@mci4me.at")
+            email_input = st.text_input("Email", placeholder="e.g. dj1234@mci4me.at")
         
         submitted = st.form_submit_button("Register User")
 

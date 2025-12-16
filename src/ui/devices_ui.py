@@ -10,13 +10,13 @@ def show_devices_ui() -> None:
     Allows adding new devices and viewing the list of existing devices.
     """
     db = DBManager()
-    st.header("🖨 Device Management")
+    st.header("Device Management")
 
     # Fetch users for the dropdown menu
     users = db.get_all_users()
     
     if not users:
-        st.warning("⚠ No users found. Please add users in 'User Management' before adding devices.")
+        st.warning("No users found. Please add users in 'User Management' before adding devices.")
         return
 
     # Create a dictionary for the dropdown: "Name (ID)" -> user_id
