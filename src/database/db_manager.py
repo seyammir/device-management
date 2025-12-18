@@ -63,3 +63,7 @@ class DBManager:
         ReservationQuery = Query()
         results = self.reservations_table.search(ReservationQuery.device_id == device_id)
         return [Reservation.from_dict(doc) for doc in results]
+
+    def get_all_reservations(self) -> List[Reservation]:
+        """Retrieve all reservations."""
+        return [Reservation.from_dict(doc) for doc in self.reservations_table.all()]
