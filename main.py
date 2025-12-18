@@ -4,6 +4,7 @@ import os
 # Import UI Modules
 from src.ui.users_ui import show_users_ui
 from src.ui.devices_ui import show_devices_ui
+from src.ui.reservations_ui import show_reservations_ui
 
 # Set page configuration
 st.set_page_config(
@@ -12,23 +13,26 @@ st.set_page_config(
     layout="wide"
 )
 
+def show_dashboard():
+    """Placeholder for the dashboard page."""
+    st.header("Dashboard")
+    st.info("Dashboard module coming soon....")
+
 def main():
     st.title("Device Management System")
     
-    st.sidebar.title("Navigation")
-    selection = st.sidebar.radio("Go to", ["Dashboard", "Device Management", "User Management"])
+    pages = [
+        st.Page(show_dashboard, title="Dashboard", default=True),
+        st.Page(show_users_ui, title="User Management"),
+        st.Page(show_devices_ui, title="Device Management"),
+        st.Page(show_reservations_ui, title="Reservations"),
+    ]
 
-    if selection == "Dashboard":
-        st.info("Dashboard module coming soon....")
-        
-    elif selection == "Device Management":
-        show_devices_ui()
-        
-    elif selection == "User Management":
-        show_users_ui()
+    pg = st.navigation(pages)
+    
+    pg.run()
     
     # System Status in Sidebar
-    st.sidebar.markdown("---")
     st.sidebar.caption("System Status")
     if os.path.exists("data/db.json"):
         st.sidebar.success("Database Connected")
