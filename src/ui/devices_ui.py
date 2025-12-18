@@ -1,5 +1,6 @@
 import streamlit as st
 from datetime import datetime, time
+import time as tm
 import pandas as pd
 from src.database.db_manager import DBManager
 from src.models.device import Device
@@ -99,5 +100,16 @@ def show_devices_ui() -> None:
             
         df = pd.DataFrame(device_data)
         st.dataframe(df, width='stretch', hide_index=True)
+        
+        st.markdown("---")
+        st.subheader("Delete Device")
+        device_to_delete = st.selectbox("Select Device to Delete", options=devices, format_func=lambda d: f"{d.name} ({d.id})", key="delete_device_select")
+        if st.button("Delete Selected Device", type="primary"):
+            db.delete_device(device_to_delete.id)
+            st.success(f"Device {device_to_delete.name} deleted successfully!")
+            tm.sleep(1)
+            st.rerun()
+            
+
     else:
         st.info("No devices found in inventory.")

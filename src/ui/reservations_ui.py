@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 from datetime import datetime, time
+import time as tm
 from src.database.db_manager import DBManager
 from src.models.reservation import Reservation
 
@@ -95,6 +96,7 @@ def show_reservations_ui() -> None:
                     break
             
             all_reservations.append({
+                "ID": res.id,
                 "Device": dev_name,
                 "User": user_name,
                 "Start": res.start_time.strftime("%Y-%m-%d %H:%M"),
@@ -105,9 +107,25 @@ def show_reservations_ui() -> None:
     if all_reservations:
         df = pd.DataFrame(all_reservations)
         df = df.sort_values(by="DateObj", ascending=False)
-        df = df.drop(columns=["DateObj"]) # Remove helper column
+        df_display = df.drop(columns=["DateObj", "ID"]) # Remove helper column and ID
         
-        st.dataframe(df, width='stretch', hide_index=True)
+        st.dataframe(df_display, width='stretch', hide_index=True)
+        
+        st.markdown("---")
+        st.subheader("Delete Reservation")
+        
+        res_to_delete = st.selectbox(
+            "Select Reservation to Delete", 
+            options=all_reservations, 
+            format_func=lambda r: f"{r['Device']} - {r['User']} ({r['Start']} - {r['End']})",
+            key="delete_res_select"
+        )
+        
+        if st.button("Delete Selected Reservation", type="primary"):
+            db.delete_reservation(res_to_delete['ID'])
+            st.success("Reservation deleted successfully!")
+            tm.sleep(1)
+            st.rerun()
     else:
         st.info("No active reservations found.")
 
