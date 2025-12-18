@@ -34,6 +34,15 @@ class DBManager:
         """Retrieve all users."""
         return [User.from_dict(doc) for doc in self.users_table.all()]
 
+    def delete_user(self, user_id: str) -> None:
+        """Delete a user by ID."""
+        UserQuery = Query()
+        self.users_table.remove(UserQuery.user_id == user_id)
+
+        # Remove associated reservations
+        ReservationQuery = Query()
+        self.reservations_table.remove(ReservationQuery.user_id == user_id)
+
     # Device Operations
     def add_device(self, device: Device) -> None:
         """Add a new device or update existing one by ID."""
@@ -53,6 +62,15 @@ class DBManager:
         result = self.devices_table.search(DeviceQuery.id == device_id)
         return Device.from_dict(result[0]) if result else None
 
+    def delete_device(self, device_id: str) -> None:
+        """Delete a device by ID and its associated reservations."""
+        DeviceQuery = Query()
+        self.devices_table.remove(DeviceQuery.id == device_id)
+        
+        # Remove associated reservations
+        ReservationQuery = Query()
+        self.reservations_table.remove(ReservationQuery.device_id == device_id)
+
     # Reservation Operations
     def add_reservation(self, reservation: Reservation) -> None:
         """Store a new reservation."""
@@ -67,3 +85,8 @@ class DBManager:
     def get_all_reservations(self) -> List[Reservation]:
         """Retrieve all reservations."""
         return [Reservation.from_dict(doc) for doc in self.reservations_table.all()]
+
+    def delete_reservation(self, reservation_id: str) -> None:
+        """Delete a reservation by ID."""
+        ReservationQuery = Query()
+        self.reservations_table.remove(ReservationQuery.id == reservation_id)

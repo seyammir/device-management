@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import time as tm
 from src.database.db_manager import DBManager
 from src.models.user import User
 
@@ -60,5 +61,16 @@ def show_users_ui() -> None:
             width='stretch',
             hide_index=True
         )
+        
+        st.markdown("---")
+        st.subheader("Delete User")
+        user_to_delete = st.selectbox("Select User to Delete", options=users, format_func=lambda u: f"{u.name} ({u.user_id})", key="delete_user_select")
+        if st.button("Delete Selected User", type="primary"):
+            db.delete_user(user_to_delete.user_id)
+            st.success(f"User {user_to_delete.name} deleted successfully!")
+            tm.sleep(1)
+            st.rerun()
+            
+
     else:
         st.info("No users found. Add a user to get started.")
