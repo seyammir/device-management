@@ -1,0 +1,97 @@
+{
+    "users": {
+        "1": {
+            "user_id": "123456",
+            "name": "John Doe",
+            "email": "dj1234@mci4me.at"
+        },
+        "2": {
+            "user_id": "111111",
+            "name": "Dutch Van Der Linde",
+            "email": "vd1111@mci4me.at"
+        },
+        "3": {
+            "user_id": "111112",
+            "name": "Rip Van Winkle",
+            "email": "wr1111@mci4me.at"
+        },
+        "4": {
+            "user_id": "111113",
+            "name": "Arthur Morgan",
+            "email": "am1899@mci4me.at"
+        },
+        "5": {
+            "user_id": "111114",
+            "name": "Sadie Adler",
+            "email": "sa1907@mci4me.at"
+        },
+        "6": {
+            "user_id": "111115",
+            "name": "Hosea Matthews",
+            "email": "hm1885@mci4me.at"
+        }
+    },
+    "devices": {
+        "1": {
+            "id": "INV-2023-01",
+            "name": "Bambu Lab X1C",
+            "responsible_person_id": "123456",
+            "end_of_life": "2030-12-18T00:00:00",
+            "first_maintenance": "2026-01-13T00:00:00",
+            "next_maintenance": "2026-01-13T00:00:00",
+            "maintenance_interval": 90,
+            "maintenance_cost": 50.0
+        },
+        "2": {
+            "id": "INV-2023-02",
+            "name": "Prusa MK4",
+            "responsible_person_id": "111113",
+            "end_of_life": "2028-06-15T00:00:00",
+            "first_maintenance": "2024-02-01T00:00:00",
+            "next_maintenance": "2026-02-01T00:00:00",
+            "maintenance_interval": 180,
+            "maintenance_cost": 25.0
+        },
+        "3": {
+            "id": "INV-2022-15",
+            "name": "Epilog Fusion Pro 32 Laser Cutter",
+            "responsible_person_id": "111111",
+            "end_of_life": "2032-01-01T00:00:00",
+            "first_maintenance": "2023-01-15T00:00:00",
+            "next_maintenance": "2025-12-20T00:00:00",
+            "maintenance_interval": 30,
+            "maintenance_cost": 150.0
+        },
+        "4": {
+            "id": "INV-2021-09",
+            "name": "Weller WT 1010 Soldering Station",
+            "responsible_person_id": "111114",
+            "end_of_life": "2026-11-30T00:00:00",
+            "first_maintenance": "2022-03-10T00:00:00",
+            "next_maintenance": "2026-03-10T00:00:00",
+            "maintenance_interval": 365,
+            "maintenance_cost": 10.0
+        },
+        "5": {
+            "id": "INV-2023-45",
+            "name": "Roland MDX-540 CNC Mill",
+            "responsible_person_id": "111115",
+            "end_of_life": "2035-05-20T00:00:00",
+            "first_maintenance": "2024-01-01T00:00:00",
+            "next_maintenance": "2026-01-01T00:00:00",
+            "maintenance_interval": 120,
+            "maintenance_cost": 200.0
+        },
+        "6": {
+            "id": "INV-2024-01",
+            "name": "Fluke 87V Multimeter",
+            "responsible_person_id": "111114",
+            "end_of_life": "2034-08-15T00:00:00",
+            "first_maintenance": "2025-08-15T00:00:00",
+            "next_maintenance": "2026-08-15T00:00:00",
+            "maintenance_interval": 365,
+            "maintenance_cost": 85.0
+        }
+    },
+    "reservations": {}
+}

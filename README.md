@@ -40,6 +40,10 @@ Run the application using Streamlit:
 streamlit run main.py
 ```
 
+## Database
+
+The application uses a JSON-based database. An example database file with initial data can be found at [`assets/db_example/db.json`](assets/db_example/db.json). Copy the file **db.json** and paste it in your **data** folder.
+
 ## Screenshots
 
 Screenshots of the application interface are in [assets](assets/screenshots/) folder.
