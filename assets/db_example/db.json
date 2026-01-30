@@ -3,32 +3,62 @@
         "1": {
             "user_id": "123456",
             "name": "John Doe",
-            "email": "dj1234@mci4me.at"
+            "email": "dj1234@mci4me.at",
+            "phone": "+43 512 123456",
+            "department": "Engineering",
+            "is_active": true,
+            "created_at": "2024-01-15T09:00:00",
+            "updated_at": "2024-01-15T09:00:00"
         },
         "2": {
             "user_id": "111111",
             "name": "Dutch Van Der Linde",
-            "email": "vd1111@mci4me.at"
+            "email": "vd1111@mci4me.at",
+            "phone": "+43 512 111111",
+            "department": "Management",
+            "is_active": true,
+            "created_at": "2024-02-01T10:30:00",
+            "updated_at": "2024-02-01T10:30:00"
         },
         "3": {
             "user_id": "111112",
             "name": "Rip Van Winkle",
-            "email": "wr1111@mci4me.at"
+            "email": "wr1111@mci4me.at",
+            "phone": "",
+            "department": "Research",
+            "is_active": true,
+            "created_at": "2024-03-10T14:00:00",
+            "updated_at": "2024-03-10T14:00:00"
         },
         "4": {
             "user_id": "111113",
             "name": "Arthur Morgan",
-            "email": "am1899@mci4me.at"
+            "email": "am1899@mci4me.at",
+            "phone": "+43 512 111113",
+            "department": "Production",
+            "is_active": true,
+            "created_at": "2024-03-15T08:45:00",
+            "updated_at": "2024-03-15T08:45:00"
         },
         "5": {
             "user_id": "111114",
             "name": "Sadie Adler",
-            "email": "sa1907@mci4me.at"
+            "email": "sa1907@mci4me.at",
+            "phone": "+43 512 111114",
+            "department": "Electronics",
+            "is_active": true,
+            "created_at": "2024-04-01T11:00:00",
+            "updated_at": "2024-04-01T11:00:00"
         },
         "6": {
             "user_id": "111115",
             "name": "Hosea Matthews",
-            "email": "hm1885@mci4me.at"
+            "email": "hm1885@mci4me.at",
+            "phone": "+43 512 111115",
+            "department": "CNC Operations",
+            "is_active": true,
+            "created_at": "2024-04-15T09:30:00",
+            "updated_at": "2024-04-15T09:30:00"
         }
     },
     "devices": {
@@ -40,7 +70,13 @@
             "first_maintenance": "2026-01-13T00:00:00",
             "next_maintenance": "2026-01-13T00:00:00",
             "maintenance_interval": 90,
-            "maintenance_cost": 50.0
+            "maintenance_cost": 50.0,
+            "description": "High-speed CoreXY 3D printer with multi-material support",
+            "location": "FabLab Room A",
+            "status": "active",
+            "tags": ["3d-printer", "fdm", "high-speed"],
+            "created_at": "2023-12-01T10:00:00",
+            "updated_at": "2025-01-15T14:30:00"
         },
         "2": {
             "id": "INV-2023-02",
@@ -50,7 +86,13 @@
             "first_maintenance": "2024-02-01T00:00:00",
             "next_maintenance": "2026-02-01T00:00:00",
             "maintenance_interval": 180,
-            "maintenance_cost": 25.0
+            "maintenance_cost": 25.0,
+            "description": "Reliable FDM 3D printer with auto bed leveling",
+            "location": "FabLab Room A",
+            "status": "active",
+            "tags": ["3d-printer", "fdm", "beginner-friendly"],
+            "created_at": "2023-06-15T09:00:00",
+            "updated_at": "2024-12-01T11:00:00"
         },
         "3": {
             "id": "INV-2022-15",
@@ -60,7 +102,13 @@
             "first_maintenance": "2023-01-15T00:00:00",
             "next_maintenance": "2025-12-20T00:00:00",
             "maintenance_interval": 30,
-            "maintenance_cost": 150.0
+            "maintenance_cost": 150.0,
+            "description": "Professional CO2 laser cutter/engraver with 32x20 inch bed",
+            "location": "Laser Room",
+            "status": "maintenance",
+            "tags": ["laser-cutter", "co2", "engraving"],
+            "created_at": "2022-01-10T08:00:00",
+            "updated_at": "2025-12-15T16:00:00"
         },
         "4": {
             "id": "INV-2021-09",
@@ -70,7 +118,13 @@
             "first_maintenance": "2022-03-10T00:00:00",
             "next_maintenance": "2026-03-10T00:00:00",
             "maintenance_interval": 365,
-            "maintenance_cost": 10.0
+            "maintenance_cost": 10.0,
+            "description": "Professional soldering station with temperature control",
+            "location": "Electronics Lab",
+            "status": "active",
+            "tags": ["soldering", "electronics", "repair"],
+            "created_at": "2021-09-01T10:00:00",
+            "updated_at": "2025-03-10T09:00:00"
         },
         "5": {
             "id": "INV-2023-45",
@@ -80,7 +134,13 @@
             "first_maintenance": "2024-01-01T00:00:00",
             "next_maintenance": "2026-01-01T00:00:00",
             "maintenance_interval": 120,
-            "maintenance_cost": 200.0
+            "maintenance_cost": 200.0,
+            "description": "4-axis CNC milling machine for precision prototyping",
+            "location": "CNC Workshop",
+            "status": "active",
+            "tags": ["cnc", "milling", "precision"],
+            "created_at": "2023-05-20T08:30:00",
+            "updated_at": "2025-09-01T14:00:00"
         },
         "6": {
             "id": "INV-2024-01",
@@ -90,8 +150,51 @@
             "first_maintenance": "2025-08-15T00:00:00",
             "next_maintenance": "2026-08-15T00:00:00",
             "maintenance_interval": 365,
-            "maintenance_cost": 85.0
+            "maintenance_cost": 85.0,
+            "description": "Industrial-grade digital multimeter with True RMS",
+            "location": "Electronics Lab",
+            "status": "active",
+            "tags": ["testing", "electronics", "measurement"],
+            "created_at": "2024-08-15T11:00:00",
+            "updated_at": "2024-08-15T11:00:00"
         }
     },
-    "reservations": {}
+    "reservations": {
+        "1": {
+            "id": "RES-2026-001",
+            "device_id": "INV-2023-01",
+            "user_id": "111113",
+            "start_time": "2026-02-01T09:00:00",
+            "end_time": "2026-02-01T12:00:00",
+            "purpose": "Prototype printing for client project",
+            "notes": "Need to print 3 iterations of the housing",
+            "status": "confirmed",
+            "created_at": "2026-01-20T10:00:00",
+            "updated_at": "2026-01-20T10:00:00"
+        },
+        "2": {
+            "id": "RES-2026-002",
+            "device_id": "INV-2023-45",
+            "user_id": "111115",
+            "start_time": "2026-02-03T14:00:00",
+            "end_time": "2026-02-03T18:00:00",
+            "purpose": "Aluminum part milling",
+            "notes": "",
+            "status": "pending",
+            "created_at": "2026-01-25T14:30:00",
+            "updated_at": "2026-01-25T14:30:00"
+        },
+        "3": {
+            "id": "RES-2026-003",
+            "device_id": "INV-2021-09",
+            "user_id": "123456",
+            "start_time": "2026-01-28T10:00:00",
+            "end_time": "2026-01-28T11:30:00",
+            "purpose": "PCB assembly",
+            "notes": "Working on sensor board v2",
+            "status": "completed",
+            "created_at": "2026-01-22T09:00:00",
+            "updated_at": "2026-01-28T11:30:00"
+        }
+    }
 }
